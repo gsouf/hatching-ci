@@ -9,15 +9,35 @@
 namespace Command;
 
 
-use Hatching\Project;
+use Hatching\Model\Project;
 
 class RunTestCommand extends CommandBase {
 
     public function run(){
 
 
-        $projectName = $this->getArgs("project-name");
-        $output      = APP_ROOT . "/data/output-test.log";
+        $projectName = $this->getArgValue("project-name");
+        $projectId   = $this->getArgValue("project-id");
+
+        if(!$projectName && !$projectId){
+            echo "No project specified";
+            return ;
+        }
+
+        if($projectName){
+            $project = Project::getByName($this->getMongo(),$projectName);
+        }else{
+            $project = Project::getById($this->getMongo(),$projectId);
+        }
+
+        if(!$project){
+            echo "Project not found";
+            return false;
+        }
+
+
+
+        $outputFile = "/tmp/outputTest.log";
 
         $projectRoot = APP_ROOT . "/data/frozen-cart";
 
@@ -30,11 +50,8 @@ class RunTestCommand extends CommandBase {
         if(!$conf)
             return false; // todo error
 
-
         $run = $conf->getRun();
 
-
-        $outputFile = "/tmp/outputTest.log";
         $exitStatus = 0;
 
 
@@ -46,13 +63,6 @@ class RunTestCommand extends CommandBase {
         $beforeCwd = getcwd();
         chdir($projectRoot);
         foreach($run as $r){
-
-            echo PHP_EOL;
-            echo PHP_EOL;
-            echo PHP_EOL;
-
-
-
 
             $newCmd =  "($r) 1>>$outputFile 2>&1 ";
 
@@ -86,9 +96,12 @@ class RunTestCommand extends CommandBase {
         chdir($beforeCwd);
 
         if($exitStatus !== 0)
-            $this->__newLine($outputFile,"\e[0;41m         Test FAILED         \e[0m ");
+            $message = "\e[0;41m         Test FAILED         \e[0m ";
         else
-            $this->__newLine($outputFile,"\e[0;42m         Test SUCCEED         \e[0m ");
+            $message = "\e[0;42m         Test SUCCEED         \e[0m ";
+
+        $this->__newLine($outputFile,$message);
+        echo $message;
 
 
 

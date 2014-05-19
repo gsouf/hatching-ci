@@ -15,6 +15,11 @@ define("APP_ROOT" , __DIR__ . "/..");
 // init autoloader
 include APP_ROOT . "/vendor/autoload.php";
 
+
+$config = include APP_ROOT . "/app/config.php";
+$di     = include APP_ROOT . "/app/services.php";
+
+
 // init daemon
 $daemon = new \CliStart\Daemon();
 $daemon->initialize();
@@ -24,6 +29,7 @@ $daemon->parseInputArgs($_SERVER['argv']);
 
 
 $cli = new \CliStart\Cli();
+$cli->di = $di;
 
 // registering daemon
 $cli->daemon($daemon);

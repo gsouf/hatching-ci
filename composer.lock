@@ -58,12 +58,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SneakyBobito/php-cli-starter.git",
-                "reference": "3302db69bf72520325bbfe1d2ccdaf4b282a64d3"
+                "reference": "8e73f2dd7ed004d3f6c7d9b45cdae2aa6edc1200"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SneakyBobito/php-cli-starter/zipball/3302db69bf72520325bbfe1d2ccdaf4b282a64d3",
-                "reference": "3302db69bf72520325bbfe1d2ccdaf4b282a64d3",
+                "url": "https://api.github.com/repos/SneakyBobito/php-cli-starter/zipball/8e73f2dd7ed004d3f6c7d9b45cdae2aa6edc1200",
+                "reference": "8e73f2dd7ed004d3f6c7d9b45cdae2aa6edc1200",
                 "shasum": ""
             },
             "require": {
@@ -93,7 +93,7 @@
                 "cli",
                 "daemon"
             ],
-            "time": "2014-05-19 10:24:59"
+            "time": "2014-05-19 13:55:13"
         }
     ],
     "packages-dev": [
