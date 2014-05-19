@@ -1,0 +1,142 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+    ],
+    "hash": "f3553e9c0482daab54e79b195b01a872",
+    "packages": [
+        {
+            "name": "mustangostang/spyc",
+            "version": "0.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mustangostang/spyc.git",
+                "reference": "dc4785b4d7227fd9905e086d499fb8abfadf9977"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mustangostang/spyc/zipball/dc4785b4d7227fd9905e086d499fb8abfadf9977",
+                "reference": "dc4785b4d7227fd9905e086d499fb8abfadf9977",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.5.x-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "Spyc.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT License"
+            ],
+            "authors": [
+                {
+                    "name": "mustangostang",
+                    "email": "vlad.andersen@gmail.com"
+                }
+            ],
+            "description": "A simple YAML loader/dumper class for PHP",
+            "homepage": "https://github.com/mustangostang/spyc/",
+            "keywords": [
+                "spyc",
+                "yaml",
+                "yml"
+            ],
+            "time": "2013-02-21 10:52:01"
+        },
+        {
+            "name": "sneakybobito/cli-starter",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SneakyBobito/php-cli-starter.git",
+                "reference": "3302db69bf72520325bbfe1d2ccdaf4b282a64d3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SneakyBobito/php-cli-starter/zipball/3302db69bf72520325bbfe1d2ccdaf4b282a64d3",
+                "reference": "3302db69bf72520325bbfe1d2ccdaf4b282a64d3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "CliStart": "lib"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Soufiane Ghzal",
+                    "email": "sghzal@gmail.com",
+                    "homepage": "https://github.com/SneakyBobito",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Daemonize php scripts",
+            "homepage": "https://github.com/SneakyBobito/php-cli-starter",
+            "keywords": [
+                "cli",
+                "daemon"
+            ],
+            "time": "2014-05-19 10:24:59"
+        }
+    ],
+    "packages-dev": [
+        {
+            "name": "sneakybobito/phalcon-stubs",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SneakyBobito/phalcon-stubs.git",
+                "reference": "ff601b39e5e6e826d0fec3430eff2c93ce76f707"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SneakyBobito/phalcon-stubs/zipball/ff601b39e5e6e826d0fec3430eff2c93ce76f707",
+                "reference": "ff601b39e5e6e826d0fec3430eff2c93ce76f707",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.9"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "IDE Stubs for phalconphp",
+            "homepage": "https://github.com/SneakyBobito/phalcon-stubs",
+            "keywords": [
+                "ide",
+                "phalcon",
+                "stubs"
+            ],
+            "time": "2013-07-11 20:10:36"
+        }
+    ],
+    "aliases": [
+
+    ],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "sneakybobito/cli-starter": 20
+    },
+    "platform": [
+
+    ],
+    "platform-dev": [
+
+    ]
+}
