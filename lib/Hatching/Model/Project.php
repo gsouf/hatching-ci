@@ -8,15 +8,16 @@
 
 namespace Hatching\Model;
 
+use CliStart\TestCommand;
 use Hatching\Model;
 use Hatching\ProjectConfiguration;
 use Phalcon\DI;
 
 class Project extends Model {
 
-    public $id;
     public $directory;
     public $name;
+
 
     function __construct($directory = null){
         if($directory)
@@ -43,7 +44,11 @@ class Project extends Model {
     }
 
 
-
+    /**
+     * @param \MongoDB $mongo
+     * @param $name
+     * @return bool|Project
+     */
     public static function getByName(\MongoDB $mongo , $name){
 
         $set = $mongo->project->find(array(
@@ -54,6 +59,11 @@ class Project extends Model {
         return false;
     }
 
+    /**
+     * @param \MongoDB $mongo
+     * @param $id
+     * @return bool|Project
+     */
     public static  function getById(\MongoDB $mongo , $id){
         $set = $mongo->project->find(array(
             "_id"=>$id

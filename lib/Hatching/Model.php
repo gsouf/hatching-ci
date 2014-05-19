@@ -14,10 +14,14 @@ function getPublicObjectVars($obj) {
 
 class Model {
 
-
+    public $_id;
 
     public function getStorable(){
         $vars = getPublicObjectVars($this);
+
+        if(!$vars["_id"])
+            unset($vars["_id"]);
+
         return $vars;
     }
 
@@ -26,11 +30,13 @@ class Model {
      * @return Project
      */
     public static function revive($data){
+
         $className = get_called_class();
         $p = new $className();
         foreach($data as $k=>$v){
             $p->$k = $v;
         }
+
         return $p;
     }
 
