@@ -128,6 +128,19 @@ ul.project-list>li .build-info .tag{
     margin-left:5px;
 }
 
+ul.project-list>li .no-test-yet{
+    display: inline-block;
+    margin-top: 4px;
+    color: #9E9E9E;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+ul.project-list>li .pre-info{
+    color: #B6B4B4;
+    font-size: 11px;
+}
+
 ul.project-list>li .project-title{
     color:#171717;
     font-weight: bold;

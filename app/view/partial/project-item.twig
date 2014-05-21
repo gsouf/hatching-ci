@@ -1,13 +1,20 @@
 <div class="sizer">
     <h3 class="project-title">{{ title }}</h3>
     <div class="build-info">
-        <span class="date auto-update-date">{{ buildDate }}</span>
-        {%  if buildStatus is same as(null) %}
-            <span class="tag">PENDING...</span>
-        {% elseif buildStatus is same as(0) %}
-            <span class="tag tag-success">SUCCESS</span>
+        {% if hasTest %}
+            <span class="pre-info">Last build : </span>
+            <span class="date auto-update-date">{{ buildDate }}</span>
+            {%  if buildStatus is same as(null) %}
+                <span class="tag">PENDING...</span>
+            {% elseif buildStatus is same as(0) %}
+                <span class="tag tag-success">SUCCESS</span>
+            {% else %}
+                <span class="tag tag-error">FAIL</span>
+            {% endif %}
         {% else %}
-            <span class="tag tag-error">FAIL</span>
+            <span class="pre-info">No test yet... </span>
+
+            <span class="date">added <span class="auto-update-date">{{ projectDate }}</span></span>
         {% endif %}
     </div>
 

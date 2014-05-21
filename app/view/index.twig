@@ -11,7 +11,9 @@
             {% include 'partial/project-item.twig' with {
                 "title" : project["project"].name ,
                 "buildDate" : project["test"].dateBegin|date("Y-m-d H:i:s") ,
-                "buildStatus" : project["test"].status
+                "buildStatus" : project["test"].status,
+                "hasTest"     : project["test"] ? true : false,
+                "projectDate" : project["project"].creationDate|date("Y-m-d H:i:s") ,
             } %}
         </li>
         {% endfor %}

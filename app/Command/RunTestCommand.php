@@ -45,9 +45,11 @@ class RunTestCommand extends CommandBase {
         $projectRoot = $project->directory{0} == "/" ? $project->directory : APP_ROOT . '/' . $project->directory;
         $conf = $project->getProjectConfiguration();
 
-        if(!$conf)
-            return false; // todo error
 
+        if(!$conf){
+            echo "\e[0;41m         Project has no conf         \e[0m ";
+            return false; // todo error
+        }
 
 
         // CREATE AND PERSIST THE TEST MODEL

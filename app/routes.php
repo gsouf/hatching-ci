@@ -35,21 +35,26 @@ $app->get('/', function () use ($di) {
 
     }
 
-    usort($projects,function($a,$b){
+    $success = usort($projects,function($a,$b){
 
         if($a["test"] && $b["test"]){
-            return $a["test"]->dateBegin - $b["test"]->dateBegin;
+            $val = $a["test"]->dateBegin - $b["test"]->dateBegin;
         }else{
+
             if($a["test"]){
-                return $a["test"]->dateBegin - $b["project"]->creationDate;
+                $val =  $a["test"]->dateBegin - $b["project"]->creationDate;
             }else if($b["test"]){
-                return $a["project"]->creationDate - $b["test"]->dateBegin;
+                $val =  $a["project"]->creationDate - $b["test"]->dateBegin;
             }else{
-                return $a["project"]->creationDate - $b["project"]->creationDate;
+                $val =  $a["project"]->creationDate - $b["project"]->creationDate;
             }
         }
 
+        return $val * -1;
+
     });
+
+
 
     echo twig("index.twig",array("projects"=>$projects));
 });
