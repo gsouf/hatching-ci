@@ -27,6 +27,7 @@ class ProjectCommand extends  CommandBase {
 
         $p = new Project($projectDir);
         $p->name = $projectName;
+        $p->creationDate = time();
 
         $arrayInsert = $p->getStorable();
 

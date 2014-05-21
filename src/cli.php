@@ -4,20 +4,10 @@
 if(php_sapi_name() != "cli")
     die("This scriptis only CLI callable");
 
+include __DIR__ . "/common-bootstrap.php";
+/* @var $di \Phalcon\DI */
+/* @var $config \Phalcon\Config */
 
-//**********************
-//  INIT THE APPLICATION
-//**********************
-
-// define root path to the application
-define("APP_ROOT" , __DIR__ . "/..");
-
-// init autoloader
-include APP_ROOT . "/vendor/autoload.php";
-
-
-$config = include APP_ROOT . "/app/config.php";
-$di     = include APP_ROOT . "/app/services.php";
 
 
 // init daemon
@@ -40,13 +30,13 @@ include APP_ROOT . "/app/commands.php";
 
 // configure the io
 $dataAdapter = new \CliStart\DataAdapter\JsonFile();
-$dataAdapter->setRunDir(APP_ROOT . "/cli/cs-data/run");
+$dataAdapter->setRunDir(APP_ROOT . "/cli/run");
 $cli->setDataAdapter($dataAdapter);
 
 
 // configure logger
-$cli->runLog = APP_ROOT . "/cli/cs-data/log/run.log";
-$cli->errorLog = APP_ROOT . "/cli/cs-data/log/error.log";
+$cli->runLog = APP_ROOT . "/cli/log/run.log";
+$cli->errorLog = APP_ROOT . "/cli/log/error.log";
 
 
 
@@ -73,4 +63,3 @@ try{
 }catch (\Exception $e){
     die($e->getMessage());
 }
-

@@ -31,4 +31,17 @@ $di->setShared("mongo",function() use($config){
 });
 
 
+$di->setShared('twig',function() use($config){
+
+    $twigOptions = array();
+
+    if($config->get("environment") === 'prod'){
+        $twigOptions["cache"] = APP_ROOT . '/data/cache/view';
+    }
+
+    $loader = new Twig_Loader_Filesystem(APP_ROOT . '/app/view');
+    $twig   = new Twig_Environment( $loader, $twigOptions);
+    return $twig;
+});
+
 return $di;

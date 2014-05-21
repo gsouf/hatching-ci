@@ -17,7 +17,7 @@ class Project extends Model {
 
     public $directory;
     public $name;
-
+    public $creationDate;
 
     function __construct($directory = null){
         if($directory)

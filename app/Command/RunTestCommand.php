@@ -42,7 +42,7 @@ class RunTestCommand extends CommandBase {
 
         // check the project is configured for hatching
         $outputFile = "/tmp/.hatching.run." . $this->getCli()->daemon()->getCsId() . ".log";
-        $projectRoot = APP_ROOT . "/data/frozen-cart";
+        $projectRoot = $project->directory{0} == "/" ? $project->directory : APP_ROOT . '/' . $project->directory;
         $conf = $project->getProjectConfiguration();
 
         if(!$conf)
@@ -102,7 +102,20 @@ class RunTestCommand extends CommandBase {
             }
 
         }
+
+        // exit with a nice message
+        if($exitStatus !== 0)
+            $message = "\e[0;41m         Test FAILED         \e[0m ";
+        else
+            $message = "\e[0;42m         Test SUCCEED         \e[0m ";
+
+        $this->__newLine($outputFile,$message);
+        echo $message;
+
+
         chdir($beforeCwd);
+
+
 
         // update the model
         $testModel->dateEnd = time();
@@ -115,14 +128,7 @@ class RunTestCommand extends CommandBase {
         unlink($outputFile);
 
 
-        // exit with a nice message
-        if($exitStatus !== 0)
-            $message = "\e[0;41m         Test FAILED         \e[0m ";
-        else
-            $message = "\e[0;42m         Test SUCCEED         \e[0m ";
 
-        $this->__newLine($outputFile,$message);
-        echo $message;
 
 
 

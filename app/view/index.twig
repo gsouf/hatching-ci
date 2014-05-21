@@ -1,0 +1,21 @@
+{% extends 'layout/main.twig' %}
+
+{%  block content %}
+    <h2>Projects</h2>
+
+    <button>Create a new project</button>
+
+    <ul class="project-list">
+        {%  for project in projects %}
+        <li>
+            {% include 'partial/project-item.twig' with {
+                "title" : project["project"].name ,
+                "buildDate" : project["test"].dateBegin|date("Y-m-d H:i:s") ,
+                "buildStatus" : project["test"].status
+            } %}
+        </li>
+        {% endfor %}
+
+
+    </ul>
+{% endblock %}

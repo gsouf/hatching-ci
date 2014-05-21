@@ -12,4 +12,6 @@ return new \Phalcon\Config(array(
         'database'    => 'hatchingci',
         'port'        => '27017'
     ),
+
+    'environment' => "dev"
 ));
