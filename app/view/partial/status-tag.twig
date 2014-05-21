@@ -1,0 +1,7 @@
+{%  if buildStatus is same as(null) %}
+    <span class="tag">PENDING...</span>
+{% elseif buildStatus is same as(0) %}
+    <span class="tag tag-success">PASS</span>
+{% else %}
+    <span class="tag tag-error">FAIL</span>
+{% endif %}

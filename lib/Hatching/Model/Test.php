@@ -29,5 +29,14 @@ class Test extends Model {
 
 
 
+    public static function getByProjectId(\MongoDB $mongo,\MongoId $id){
+        $cursor = $mongo->test->find(array("projectId" => $id));
+        $testes = array();
+        while($t = $cursor->getNext()){
+            $testes[] = Test::revive($t);
+        }
+        return $testes;
+    }
+
 
 } 

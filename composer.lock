@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "7c37a8de6259605a4a9a99b82d191906",
+    "hash": "c559e629023452d4c94fe3028e5a8ec8",
     "packages": [
         {
             "name": "mustangostang/spyc",
@@ -53,17 +53,60 @@
             "time": "2013-02-21 10:52:01"
         },
         {
+            "name": "sensiolabs/ansi-to-html",
+            "version": "v1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sensiolabs/ansi-to-html.git",
+                "reference": "34f153f2d8dd4ec2bb721154f61f0acb61bedaca"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sensiolabs/ansi-to-html/zipball/34f153f2d8dd4ec2bb721154f61f0acb61bedaca",
+                "reference": "34f153f2d8dd4ec2bb721154f61f0acb61bedaca",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "SensioLabs\\AnsiConverter": "."
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com",
+                    "homepage": "http://fabien.potencier.org",
+                    "role": "Lead Developer"
+                }
+            ],
+            "description": "A library to convert a text with ANSI codes to HTML",
+            "time": "2013-10-18 08:02:24"
+        },
+        {
             "name": "sneakybobito/cli-starter",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SneakyBobito/php-cli-starter.git",
-                "reference": "8e73f2dd7ed004d3f6c7d9b45cdae2aa6edc1200"
+                "reference": "459be89895ec4d07facb003226063b88345562cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SneakyBobito/php-cli-starter/zipball/8e73f2dd7ed004d3f6c7d9b45cdae2aa6edc1200",
-                "reference": "8e73f2dd7ed004d3f6c7d9b45cdae2aa6edc1200",
+                "url": "https://api.github.com/repos/SneakyBobito/php-cli-starter/zipball/459be89895ec4d07facb003226063b88345562cb",
+                "reference": "459be89895ec4d07facb003226063b88345562cb",
                 "shasum": ""
             },
             "require": {
@@ -93,7 +136,7 @@
                 "cli",
                 "daemon"
             ],
-            "time": "2014-05-19 13:55:13"
+            "time": "2014-05-21 19:12:53"
         },
         {
             "name": "twig/twig",

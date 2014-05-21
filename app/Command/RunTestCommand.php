@@ -43,7 +43,7 @@ class RunTestCommand extends CommandBase {
         // check the project is configured for hatching
         $outputFile = "/tmp/.hatching.run." . $this->getCli()->daemon()->getCsId() . ".log";
         $projectRoot = $project->directory{0} == "/" ? $project->directory : APP_ROOT . '/' . $project->directory;
-        $conf = $project->getProjectConfiguration();
+        $conf = $project->getProjectConfiguration($projectRoot);
 
 
         if(!$conf){
@@ -128,10 +128,6 @@ class RunTestCommand extends CommandBase {
 
         // delete the buffer
         unlink($outputFile);
-
-
-
-
 
 
     }

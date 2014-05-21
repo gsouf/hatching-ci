@@ -6,7 +6,7 @@ $(function(){
     HatchingCi.updateTimes(".auto-update-date");
 
     setInterval(function(){
-        PhMaster.updateTimes(".auto-update-date");
+        HatchingCi.updateTimes(".auto-update-date");
     },60000); //update the time every minute
 
 });

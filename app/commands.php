@@ -24,6 +24,14 @@ $command->addArg($arg);
 
 
 
+$command = new \CliStart\CommandDeclaration("test","Command\ProjectCommand","test");
+$command->setMaxInstances(0);
+$cli->registerCommand($command);
+
+
+$command = new \CliStart\CommandDeclaration("devtest","Command\ProjectCommand","devtest");
+$command->setMaxInstances(0);
+$cli->registerCommand($command);
 
 
 

@@ -12,6 +12,12 @@ $di = new \Phalcon\DI();
 
 $di->setShared("config",$config);
 
+$di->setShared("cli-caller",function() use($config){
+
+    return new \CliStart\Caller(APP_ROOT . "/src/cli.php");
+
+});
+
 $di->setShared("mongo",function() use($config){
 
 

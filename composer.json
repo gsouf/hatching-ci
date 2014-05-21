@@ -3,7 +3,8 @@
     "require" : {
         "sneakybobito/cli-starter" : "dev-master",
         "mustangostang/spyc"       : "0.5.1",
-        "twig/twig"                : "v1.15.1"
+        "twig/twig"                : "v1.15.1",
+        "sensiolabs/ansi-to-html"  : "v1.0.3"
     },
 
     "require-dev" : {
