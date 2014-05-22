@@ -2,26 +2,38 @@
 
 {%  block content %}
     <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
-    <h2>{{ project.name }}</h2>
+
+
+    <div class="clearfix">
+        <h2 class="standard">{{ project.name }}</h2>
+
+    </div>
+
 
     {% set test = tests[0] %}
 
-    Last build : {{ test.dateBegin | date }}
-    <br/>
-    <br/>
-    {% include 'partial/status-tag.twig' with {"buildStatus" : test.status } %}
-    <br/>
-    <br/>
+    {%  if test %}
 
-    <pre style="
-        font-family: 'Droid Sans Mono','Courier New',monospace;
-        background: #262626;
-        border-radius: 2px;
-        margin: 5px;padding:5px;
-        color:#EEE;
-        ">
-        {{- ansi_converter.convert(test.executionString) | raw -}}
-    </pre>
+        Last build : {{ test.dateBegin | date }}
+        <br/>
+        <br/>
+        {% include 'partial/status-tag.twig' with {"buildStatus" : test.status } %}
+        <br/>
+        <br/>
 
+        <pre style="
+            font-family: 'Droid Sans Mono','Courier New',monospace;
+            background: #262626;
+            border-radius: 2px;
+            margin: 5px;padding:5px;
+            color:#EEE;
+            ">
+            {{- ansi_converter.convert(test.executionString) | raw -}}
+        </pre>
+    {% else %}
+
+        <div style="text-align: center;margin-top:60px;font-size:26px;color:#999;font-weight: bold;text-decoration: underline">No test yet</div>
+
+    {% endif %}
 
 {% endblock %}

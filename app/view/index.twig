@@ -1,9 +1,14 @@
 {% extends 'layout/main.twig' %}
 
 {%  block content %}
-    <h2>Projects</h2>
 
-    <button>Create a new project</button>
+    <div class="clearfix">
+        <h2 class="standard">Projects</h2>
+        <div class="contextual-header">
+            <button class="project-button">Create a new project</button>
+        </div>
+    </div>
+
 
     <ul class="project-list">
         {%  for project in projects %}

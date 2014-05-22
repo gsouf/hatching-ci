@@ -1,5 +1,5 @@
 <div class="sizer">
-    <h3 class="project-title">{{ title }}</h3>
+    <h3 class="project-title"><a href="/project/{{ title }}">{{ title }}</a></h3>
     <div class="build-info">
         {% if hasTest %}
             <span class="pre-info">Last build : </span>
@@ -14,7 +14,7 @@
 
     <ul class="button-list">
         <li class="tag tag-medium">SOURCES</li>
-        <li class="tag tag-medium tag-action">REBUILD</li>
+        <li class="tag tag-medium tag-action" data-rebuild="{{ title }}">REBUILD</li>
         <li class="tag tag-medium tag-action">EDIT</li>
     </ul>
 

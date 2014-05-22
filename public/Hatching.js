@@ -24,7 +24,6 @@ HatchingCi.updateTimes = function(selector){
     var oneMonth = 2329744;
     var oneYear = 31556926;
 
-    console.log(selector);
     $(selector).each(function(){
 
         var span = $(this);
@@ -51,12 +50,12 @@ HatchingCi.updateTimes = function(selector){
         }
         // more than one week
         else if(now - dateTime > oneWeek ){
-            span.html( Hatching.Locale.days[date.getDay()] + " " + date.getDate() + " " + Hatching.Locale.month[date.getMonth()] );
+            span.html( HatchingCi.Locale.days[date.getDay()] + " " + date.getDate() + " " + HatchingCi.Locale.month[date.getMonth()] );
             span.attr("ph_reupdatetime","0"); //dont need to be reupdated after 1 week
         }
         // more than a day
         else if(now - dateTime > oneDay ){
-            span.html( Hatching.Locale.days[date.getDay()] + " " + date.getHours() + ":" + date.getMinutes() );
+            span.html( HatchingCi.Locale.days[date.getDay()] + " " + date.getHours() + ":" + date.getMinutes() );
             span.attr("ph_reupdatetime","0"); //dont need to be reupdated after 1 day
         }
         // more than one hour

@@ -4,13 +4,12 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <title>-Hatching-</title>
         <link href="/style.css" rel="stylesheet" type="text/css">
-        <script type="text/javascript" src="/jquery.min.js"></script>
-        <script type="text/javascript" src="/script.js"></script>
+
     </head>
     <body>
 
         <div id="top">
-            <h1>HATCHING</h1>
+            <h1><a href="/">HATCHING</a></h1>
             <span>A SIMPLE WAY TO RUN TESTS</span>
         </div>
 
@@ -20,6 +19,16 @@
 
         {% endblock %}
         </div>
+
+
+        <script type="text/javascript" src="/jquery.min.js"></script>
+        <script type="text/javascript" src="/Hatching.js"></script>
+        <script type="text/javascript" src="/locale.js"></script>
+        <script type="text/javascript" src="/scripts.js"></script>
+
+        {% block additionalScripts %}
+
+        {% endblock %}
 
     </body>
 

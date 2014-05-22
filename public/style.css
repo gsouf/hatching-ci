@@ -74,8 +74,12 @@ body{
     font-weight: bold;
     color: #D8D8D8;
     font-size: 36px ;
-
 }
+#top h1>a{
+    text-decoration: none;
+    color: #D8D8D8;
+}
+
 #top span{
 
     font-weight: bold;
@@ -85,9 +89,38 @@ body{
 }
 
 
+h2.standard{
+    font-size:20px;
+    color:#0C7979;
+    font-weight: bold;
+    margin: 8px 0;
+    float:left;
+}
+
+.contextual-header{
+    float: right;
+    padding:5px 0;
+}
+
 #body{
     width:900px;
     margin:auto;
+}
+
+
+.contextual-header .project-button{
+
+    background: #0C7979;
+    border-radius: 3px;
+    border:0;
+    padding:4px 12px;
+    color: white;
+    cursor: pointer;
+
+}
+.contextual-header .project-button:hover{
+    background: #0C6B6B;
+
 }
 
 
@@ -149,6 +182,17 @@ ul.project-list>li .project-title{
     margin-top: 5px;
 }
 
+ul.project-list>li .project-title>a{
+    color:#171717;
+    text-decoration: none;
+}
+
+ul.project-list>li .project-title>a:hover{
+    color:#0C7979;
+    text-decoration: none;
+}
+
+
 ul.project-list>li .button-list{
 
     position: absolute;
@@ -159,6 +203,11 @@ ul.project-list>li .button-list{
 
 ul.project-list>li ul.button-list>li{
     display: inline-block;
+}
+
+
+ul.project-list>li .button-list .tag{
+    cursor: pointer;
 }
 
 .tag{
@@ -187,4 +236,13 @@ ul.project-list>li ul.button-list>li{
 
 .tag.tag-action{
     background: #0C7979;
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
 }
